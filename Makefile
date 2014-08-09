@@ -31,7 +31,7 @@ $(files): get
 
 build: $(target)
 
-$(target):
+$(target): get
 	go build -o $@ $(patsubst bin/$(osdir)%$(ext),%/main.go,$@) 
 
 print-vars:
