@@ -8,6 +8,6 @@ go:
 #install: true
 
 script: 
-  - make
+  - make run
 
 # vim:set sw=2 ts=2:
