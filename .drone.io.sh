@@ -18,8 +18,11 @@ popd
 mkdir artifacts
 pwd=`pwd`
 
+# 各OS向けにbuild
 for os in linux windows darwin; do
 	GOOS=$os GOARCH=amd64 make build
 	tar -C bin -cvzf $pwd/artifacts/${os}_amd64.tar.gz ${os}
 done
 
+# すべてのファイルを実行
+make run
