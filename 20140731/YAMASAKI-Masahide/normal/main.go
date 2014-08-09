@@ -2,11 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
+func AppendString(value1 string, value2 string) (value3 string) {
 	/* Normal：文字列の連結 */
-	value1 := "ABC"
-	value2 := "HOGE"
-	value3 := value1 + value2
-	fmt.Println(value3)
+	value3 = value1 + value2
+	return
+}
 
+func main() {
+	fmt.Println(AppendString("ABC", "HOGE"))
 }

@@ -6,12 +6,8 @@ import (
 	"github.com/kr/pretty"
 )
 
-func printIP(name string, ip *net.IP) {
-	if !ip.IsLoopback() {
-		pretty.Printf("%s:%s\n", name, ip)
-	}
-}
-func main() {
+func GetIntterfaces() *map[string]net.IP {
+	result := map[string]net.IP{}
 	/* Hard:自分のマシンのIPアドレスを取得し画面表示 */
 	interfaces, _ := net.Interfaces()
 	//fmt.Printf("%#v\n", interfaces)
@@ -23,15 +19,24 @@ func main() {
 			default:
 				pretty.Printf("unexpected type %t\n", ip)
 			case *net.IPNet:
-				printIP(i.Name, &ip.IP)
+				result[i.Name] = ip.IP
 			case *net.IPAddr:
-				printIP(i.Name, &ip.IP)
+				result[i.Name] = ip.IP
 				/*
 					//↓の書き方はコンパイルエラーに
 					case *net.IPNet, *net.IPAddr:
 						printIP(i.Name, &ip.IP)  // > ip.IP undefined (type net.Addr has no field or method IP)
 				*/
 			}
+		}
+	}
+	return &result
+}
+
+func main() {
+	for key, ip := range *GetIntterfaces() {
+		if !ip.IsLoopback() {
+			pretty.Printf("%s:%s\n", key, ip)
 		}
 	}
 }
