@@ -16,7 +16,7 @@ files=$(addsuffix /main.go,$(dirs))
 
 default: build
 
-all: run
+all: run build
 
 get:
 	go get ./...
@@ -31,7 +31,7 @@ $(files): get
 
 build: $(target)
 
-$(target):
+$(target): get
 	go build -o $@ $(patsubst bin/$(osdir)%$(ext),%/main.go,$@) 
 
 print-vars:
