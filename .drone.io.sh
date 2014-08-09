@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -x
+set -x
 export GOROOT=~/go
 export PATH=$GOROOT/bin:$PATH
 
