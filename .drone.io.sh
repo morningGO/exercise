@@ -6,7 +6,10 @@ export PATH=$GOROOT/bin:$PATH
 
 # go 1.2.1をダウンロードして展開
 wget -q https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz
-tar -C ~/ -xzf go1.3.linux-amd64.tar.gz
+tar -C ~/ -xz go1.3.linux-amd64.tar.gz
+
+# すべてのファイルを実行
+make run
 
 # クロスコンパイルの準備
 pushd ~/go/src
@@ -24,5 +27,3 @@ for os in linux windows darwin; do
 	tar -C bin -cvzf $pwd/artifacts/${os}_amd64.tar.gz ${os}
 done
 
-# すべてのファイルを実行
-make run
