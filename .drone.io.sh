@@ -1,12 +1,12 @@
 #!/bin/bash
 
-set -x
+#set -x
 export GOROOT=~/go
 export PATH=$GOROOT/bin:$PATH
 
 # go 1.2.1をダウンロードして展開
 wget -q https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz
-tar -C ~/ -xz go1.3.linux-amd64.tar.gz
+tar -C ~/ -xzf go1.3.linux-amd64.tar.gz
 
 # すべてのファイルを実行
 make run
