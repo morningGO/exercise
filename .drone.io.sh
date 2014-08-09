@@ -18,8 +18,7 @@ popd
 mkdir artifacts
 pwd=`pwd`
 
-#for os in linux windows darwin; do
-for os in darwin ; do
+for os in linux windows darwin; do
 	GOOS=$os GOARCH=amd64 make build
 	tar -C bin -cvzf $pwd/artifacts/${os}_amd64.tar.gz ${os}
 done
