@@ -6,7 +6,7 @@ import (
 	"github.com/kr/pretty"
 )
 
-func GetIntterfaces() *map[string]net.IP {
+func GetInterfaces() *map[string]net.IP {
 	result := map[string]net.IP{}
 	/* Hard:自分のマシンのIPアドレスを取得し画面表示 */
 	interfaces, _ := net.Interfaces()
@@ -34,7 +34,7 @@ func GetIntterfaces() *map[string]net.IP {
 }
 
 func main() {
-	for key, ip := range *GetIntterfaces() {
+	for key, ip := range *GetInterfaces() {
 		if !ip.IsLoopback() {
 			pretty.Printf("%s:%s\n", key, ip)
 		}
