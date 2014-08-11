@@ -8,6 +8,8 @@ export PATH=$GOROOT/bin:$PATH
 wget -q https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz
 tar -C ~/ -xzf go1.3.linux-amd64.tar.gz
 
+make test
+
 # すべてのファイルを実行
 make run
 
