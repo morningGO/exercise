@@ -4,7 +4,7 @@ Exercise
 
 ## Downloads | exercise ##
 
-* [Downloads | exercise / drone.io](https://drone.io/github.com/morningGO/exercise/files)
+* [https://drone.io/github.com/morningGO/exercise/files](https://drone.io/github.com/morningGO/exercise/files)
 
 
 
