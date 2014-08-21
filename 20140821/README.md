@@ -8,6 +8,7 @@
 ## Hard: 謎のYAMLファイルを解読
 
 以下の`main_test.go`のテストコードが通るように、`main.go`の`YAMLToFiles`関数を実装してください。
+([/20140821/YAMASAKI-Masahide/hard](https://github.com/morningGO/exercise/tree/master/20140821/YAMASAKI-Masahide/hard) を各自のディレクトリにコピーしてください)
 
 main.go
 ```go
