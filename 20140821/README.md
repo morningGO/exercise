@@ -10,7 +10,30 @@
 以下の`main_test.go`のテストコードが通るように、`main.go`の`YAMLToFiles`関数を実装してください。
 ([/20140821/YAMASAKI-Masahide/hard](https://github.com/morningGO/exercise/tree/master/20140821/YAMASAKI-Masahide/hard) を各自のディレクトリにコピーしてください)
 
-main.go
+### テストの実行方法
+
+```bash: 
+$ cd 20140821
+$ cp -a YAMASAKI-Masahide <ユーザー名>  # テンプレートをコピー
+$ cd <ユーザー名>/hard                  # ディレクトリに移動 
+$ go test                               # テスト実行
+--- FAIL: TestYAMLToFiles (0.00 seconds)
+	main_test.go:41: Not implemented
+FAIL
+exit status 1
+FAIL	github.com/morningGO/exercise/20140821/YAMASAKI-Masahide/hard	0.008s
+### ↑失敗するとこのようなエラーが出る ##
+
+### 成功すると↓ ########################
+$ go test
+PASS
+ok  	github.com/morningGO/exercise/20140821/YAMASAKI-Masahide/hard	0.009s
+```
+
+*テンプレートコード*
+
+* main.go
+
 ```go
 package main
 
@@ -55,7 +78,8 @@ func YAMLToFiles(filename string) error {
 }
 ```
 
-main_test.go
+* main_test.go
+
 ```go
 package main
 
